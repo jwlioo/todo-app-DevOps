@@ -22,7 +22,7 @@ def create_todo():
         todo = todo_service.create(title=title, description=description)
         return jsonify(todo.to_dict()), 201
     except ValueError as e:
-        return jsonify({"error": str(e)}), 400
+        return jsonify({"error": str(e)}), 40
 
 @todo_bp.route("/<int:todo_id>", methods=["GET"])
 def get_todo(todo_id: int):
